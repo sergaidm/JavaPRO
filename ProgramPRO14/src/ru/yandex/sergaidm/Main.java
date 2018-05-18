@@ -10,7 +10,6 @@ public class Main {
 		SomeClass scTwo = new SomeClass(1, "Second object", 1.5);
 		SomeClass scThree = new SomeClass(50, "Third object", 40);
 		SomeClass scFour = new SomeClass(17, "Fourth object", 49);
-		SomeClassAction sca = new SomeClassAction();
 		scOne.getFields();
 		SomeClass[] array = new SomeClass[] { scOne, scTwo, scThree, scFour };
 		System.out
