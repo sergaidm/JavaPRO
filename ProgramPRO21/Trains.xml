@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<trains>
+
+    <train id="1">
+
+        <from>Kiev</from>
+        <to>Donetsk</to>  
+        <date>27.05.2018</date>
+        <departure>13:00</departure>
+    </train>
+
+    <train id="2">
+
+        <from>Kiev</from>
+        <to>L'vov</to>
+        <date>27.05.2018</date>
+        <departure>16:00</departure>
+    </train>
+    
+</trains>

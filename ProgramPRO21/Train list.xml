@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<trains>
+
+    <train id="1">
+
+        <date>27.05.2018</date>
+
+        <departure>13:00</departure>
+
+        <from>Kiev</from>
+
+        <to>Donetsk</to>
+
+    </train>
+
+    <train id="2">
+
+        <date>27.05.2018</date>
+
+        <departure>16:00</departure>
+
+        <from>Kiev</from>
+
+        <to>L'vov</to>
+
+    </train>
+
+    <train id="3">
+
+        <date>26.05.2018</date>
+
+        <departure>12:30</departure>
+
+        <from>Kiev</from>
+
+        <to>Har'kov</to>
+
+    </train>
+
+    <train id="4">
+
+        <date>27.05.2018</date>
+
+        <departure>13:00</departure>
+
+        <from>Kiev</from>
+
+        <to>Lugansk</to>
+
+    </train>
+
+    <train id="5">
+
+        <date>27.05.2018</date>
+
+        <departure>15:30</departure>
+
+        <from>Kiev</from>
+
+        <to>Moscow</to>
+
+    </train>
+
+    <train id="6">
+
+        <date>27.05.2018</date>
+
+        <departure>18:30</departure>
+
+        <from>Kiev</from>
+
+        <to>Dnepropetrovsk</to>
+
+    </train>
+
+</trains>
