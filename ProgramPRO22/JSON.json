@@ -1,0 +1,11 @@
+{
+    "name": "Ivan",
+    "surname": "Ivanov",
+    "phones": ["044-256-78-90", "066-123-45-67"],
+    "sites": ["http://ivanov.com", "http://ivanov.ru"],
+    "address": {
+         "country": "UA",
+         "city": "Kiev",
+         "street": "Zhukov street"
+    }
+}
