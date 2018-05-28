@@ -11,8 +11,8 @@ public class JAXBWorker {
 
 	public static void saveToXMLFile(TrainsList trains, File file) {
 		try {
-			JAXBContext jaxbC = JAXBContext.newInstance(TrainsList.class);
-			Marshaller marshaller = jaxbC.createMarshaller();
+			JAXBContext jaxbContext = JAXBContext.newInstance(TrainsList.class);
+			Marshaller marshaller = jaxbContext.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			marshaller.marshal(trains, file);
 			marshaller.marshal(trains, System.out);
