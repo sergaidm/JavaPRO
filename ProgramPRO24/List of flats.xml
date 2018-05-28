@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flats>
+    <flat>
+        <address>Ivanov street, 1</address>
+        <floor>1</floor>
+        <price currency="UAH">
+            <cost>260000.0</cost>
+        </price>
+        <roomsNumber>1</roomsNumber>
+    </flat>
+    <flat>
+        <address>Sidorov street, 3</address>
+        <floor>3</floor>
+        <price currency="$">
+            <cost>30000.0</cost>
+        </price>
+        <roomsNumber>3</roomsNumber>
+    </flat>
+    <flat>
+        <address>Fedorov street, 4</address>
+        <floor>4</floor>
+        <price currency="$">
+            <cost>40000.0</cost>
+        </price>
+        <roomsNumber>4</roomsNumber>
+    </flat>
+    <flat>
+        <address>Andreev street, 5</address>
+        <floor>5</floor>
+        <price currency="$">
+            <cost>50000.0</cost>
+        </price>
+        <roomsNumber>5</roomsNumber>
+    </flat>
+    <flat>
+        <address>Petrov street, 6</address>
+        <floor>2</floor>
+        <price currency="$">
+            <cost>20000.0</cost>
+        </price>
+        <roomsNumber>2</roomsNumber>
+    </flat>
+</flats>
