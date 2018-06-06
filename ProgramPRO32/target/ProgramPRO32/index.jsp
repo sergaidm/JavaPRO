@@ -5,7 +5,7 @@
 <title>Questionnaire</title>
 </head>
 <body>
-		<form method="post" action="send">
+		<form method="post" action="questions">
 		<h2>Welcome! Take part in a short questionnaire.</h2>
 		<h2>To get started, input your name and surname:</h2>
 			<table>

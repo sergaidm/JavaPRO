@@ -27,7 +27,7 @@ public class StatisticServlet extends HttpServlet {
 	private int answerThirteen=0;
 	private static final String TEMPLATE = "<html>"
 			+ "<head><meta charset=\"Cp1251\"><title>Questionnaire</title></head>"
-			+ "<body><form method=\"get\" action=\"/ProgramPRO31\"><p>%s</p>"
+			+ "<body><form method=\"get\" action=\"/ProgramPRO32\"><p>%s</p>"
 			+ "<input type=\"submit\" value=\"Repeat the questionnaire\"></form></body></html>";
 
 	@Override
