@@ -1,6 +1,7 @@
 package ru.yandex.sergaidm;
 
 import java.io.IOException;
+import java.io.OutputStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,10 +26,10 @@ public class StatisticServlet extends HttpServlet {
 	private int answerEleven=0;
 	private int answerTwelve=0;
 	private int answerThirteen=0;
-	private static final String TEMPLATE = "<html>"
-			+ "<head><meta charset=\"Cp1251\"><title>Questionnaire</title></head>"
+	private static final String TEMPLATE = "<!DOCTYPE html><html>"
+			+ "<head><meta charset=\"UTF-8\"><title>Анкета</title></head>"
 			+ "<body><form method=\"get\" action=\"/ProgramPRO31\"><p>%s</p>"
-			+ "<input type=\"submit\" value=\"Repeat the questionnaire\"></form></body></html>";
+			+ "<input type=\"submit\" value=\"Повторить прохождение\"></form></body></html>";
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -38,22 +39,25 @@ public class StatisticServlet extends HttpServlet {
 		final String itemThree = request.getParameter("band");		
 		comparator(itemOne, itemTwo, itemThree);		
 		String result = result();
-		response.getWriter().println(String.format(TEMPLATE, result));
+		OutputStream os = response.getOutputStream();		
+		os.write(String.format(TEMPLATE, result).getBytes("UTF-8"));
+		os.flush();
+		os.close();
 	}
 	
 	private void comparator(String itemOne, String itemTwo, String itemThree){
-		if ("Actions".equals(itemOne)) {
+		if ("Simulators".equals(itemOne)) {
 			answerOne++;
-		} else if ("RPG".equals(itemOne)) {
-			answerTwo++;
 		} else if ("RTS".equals(itemOne)) {
+			answerTwo++;
+		} else if ("Actions".equals(itemOne)) {
 			answerThree++;
-		} else if ("Simulators".equals(itemOne)) {
+		} else if ("RPG".equals(itemOne)) {
 			answerFour++;
 		}		
-		if ("Classic".equals(itemTwo)) {
+		if ("Historical".equals(itemTwo)) {
 			answerFive++;
-		} else if ("Historical".equals(itemTwo)) {
+		} else if ("Classic".equals(itemTwo)) {
 			answerSix++;
 		} else if ("Fantastic".equals(itemTwo)) {
 			answerSeven++;
@@ -74,24 +78,24 @@ public class StatisticServlet extends HttpServlet {
 	}
 	
 	private String result() {
-		return "<ol><li><p><strong>The most popular genres of computer games:</strong></p>"
-				+ "<ul type=\"disc\"><li><p>Actions - " + answerOne + "</p></li>" 
-				+ "<li><p>RPG - " + answerTwo + "</p></li>" 
-				+ "<li><p>RTS - " + answerThree + "</p></li>"
-				+ "<li><p>Simulators - " + answerFour + "</p></li>"
+		return "<ol><li><p><strong>Наиболее популярные жанры игр:</strong></p>"
+				+ "<ul type=\"disc\"><li><p>Симуляторы - " + answerOne + "</p></li>" 
+				+ "<li><p>Стратегии - " + answerTwo + "</p></li>" 
+				+ "<li><p>Экшены - " + answerThree + "</p></li>"
+				+ "<li><p>RPG - " + answerFour + "</p></li>"
 				+ "</ul></li>"
-				+ "<li><p><strong>The most popular genres of literature:</strong></p>"
-				+ "<ul type=\"disc\"><li><p>Classic - " + answerFive + "</p></li>" 
-				+ "<li><p>Historical - " + answerSix + "</p></li>" 
-				+ "<li><p>Fantastic - " + answerSeven + "</p></li>"
-				+ "<li><p>Fantasy - " + answerEight + "</p></li>"
+				+ "<li><p><strong>Наиболее популярные жанры литературы:</strong></p>"
+				+ "<ul type=\"disc\"><li><p>Историческая - " + answerFive + "</p></li>" 
+				+ "<li><p>Классическая - " + answerSix + "</p></li>" 
+				+ "<li><p>Фантастика - " + answerSeven + "</p></li>"
+				+ "<li><p>Фэнтези - " + answerEight + "</p></li>"
 				+ "</ul></li>"
-				+"<li><p><strong>The most popular Russian metal-bands:</strong></p>"
-				+ "<ul type=\"disc\"><li><p>Aria - " + answerNine + "</p></li>"
-				+ "<li><p>Arkona - " + answerTen + "</p></li>"
-				+ "<li><p>Kipelov - " + answerEleven + "</p></li>"
-				+ "<li><p>Master - " + answerTwelve + "</p></li>"
-				+ "<li><p>Epidemiya - " + answerThirteen + "</p></li>"
+				+"<li><p><strong>Наиболее популярные российские металл-группы:</strong></p>"
+				+ "<ul type=\"disc\"><li><p>Ария - " + answerNine + "</p></li>"
+				+ "<li><p>Аркона - " + answerTen + "</p></li>"
+				+ "<li><p>Кипелов - " + answerEleven + "</p></li>"
+				+ "<li><p>Мастер - " + answerTwelve + "</p></li>"
+				+ "<li><p>Эпидемия - " + answerThirteen + "</p></li>"
 				+ "</ul></li>"
 				+ "</ol>";
 	}

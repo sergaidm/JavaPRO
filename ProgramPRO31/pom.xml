@@ -25,6 +25,16 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>ProgramPRO32</finalName>
+    <plugins>
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>2.0.3</version>
+        <configuration>
+          <appName>sergaidm-questionnaire</appName>
+        </configuration>
+      </plugin>
+    </plugins>
+    <finalName>ProgramPRO31</finalName>
   </build>
 </project>
