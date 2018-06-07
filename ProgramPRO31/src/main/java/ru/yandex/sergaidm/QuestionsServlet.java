@@ -19,26 +19,26 @@ public class QuestionsServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
-		String text = "<p><strong>Здравствуй, " + name + " " + surname + "! </strong></p>"
+		String text = "<p><strong>Hello, " + name + " " + surname + "! </strong></p>"
 				+ "<!DOCTYPE html><html><head><meta charset=\"UTF-8\">" 
-				+ "<title>Анкета</title></head><body><form method=\"post\" action=\"statistic\">" 
-				+ "<ol><li><p><strong>Ваш любимый жанр компьютерных игр:</strong></p>"
-				+ "<input name=\"game\" type=\"radio\" value=\"Simulators\">Симуляторы</p>"
-				+ "<p><input name=\"game\" type=\"radio\" value=\"RTS\">Стратегии</p>"
-				+ "<p><input name=\"game\" type=\"radio\" value=\"Actions\">Экшены</p>"
+				+ "<title>Questionnaire</title></head><body><form method=\"post\" action=\"statistic\">" 
+				+ "<ol><li><p><strong>Your favorite genre of computer games:</strong></p>"
+				+ "<input name=\"game\" type=\"radio\" value=\"Simulators\">Simulators</p>"
+				+ "<p><input name=\"game\" type=\"radio\" value=\"RTS\">RTS</p>"
+				+ "<p><input name=\"game\" type=\"radio\" value=\"Actions\">Actions</p>"
 				+ "<p><input name=\"game\" type=\"radio\" value=\"RPG\">RPG</p></li>"
-				+ "<li><p><strong>Ваш любимый жанр литературы:</strong></p>"
-				+ "<p><input name=\"literature\" type=\"radio\" value=\"Historical\">Историческая</p>"
-				+ "<p><input name=\"literature\" type=\"radio\" value=\"Classic\">Классическая</p>"				
-				+ "<p><input name=\"literature\" type=\"radio\" value=\"Fantastic\">Фантастика</p>"
-				+ "<p><input name=\"literature\" type=\"radio\" value=\"Fantasy\">Фэнтези</p></li>"
-				+ "<li><p><strong>Ваша любимая российская металл-группа:</strong></p>"
-				+ "<p><input name=\"band\" type=\"radio\" value=\"Aria\">Ария</p>"
-				+ "<p><input name=\"band\" type=\"radio\" value=\"Arkona\">Аркона</p>"
-				+ "<p><input name=\"band\" type=\"radio\" value=\"Kipelov\">Кипелов</p>"
-				+ "<p><input name=\"band\" type=\"radio\" value=\"Master\">Мастер</p>"
-				+ "<p><input name=\"band\" type=\"radio\" value=\"Epidemiya\">Эпидемия</p></li></ol>"
-				+ "<input type=\"submit\" value=\"Завершить\"></form></body></html>";
+				+ "<li><p><strong>Your favorite genre of literature:</strong></p>"
+				+ "<p><input name=\"literature\" type=\"radio\" value=\"Historical\">Historical</p>"
+				+ "<p><input name=\"literature\" type=\"radio\" value=\"Classic\">Classic</p>"				
+				+ "<p><input name=\"literature\" type=\"radio\" value=\"Fantastic\">Fantastic</p>"
+				+ "<p><input name=\"literature\" type=\"radio\" value=\"Fantasy\">Fantasy</p></li>"
+				+ "<li><p><strong>Your favorite Russian metal-band:</strong></p>"
+				+ "<p><input name=\"band\" type=\"radio\" value=\"Aria\">Aria</p>"
+				+ "<p><input name=\"band\" type=\"radio\" value=\"Arkona\">Arkona</p>"
+				+ "<p><input name=\"band\" type=\"radio\" value=\"Kipelov\">Kipelov</p>"
+				+ "<p><input name=\"band\" type=\"radio\" value=\"Master\">Master</p>"
+				+ "<p><input name=\"band\" type=\"radio\" value=\"Epidemiya\">Epidemiya</p></li></ol>"
+				+ "<input type=\"submit\" value=\"Complete\"></form></body></html>";
 		OutputStream os = response.getOutputStream();
 		os.write(text.getBytes("UTF-8"));
 		os.flush();

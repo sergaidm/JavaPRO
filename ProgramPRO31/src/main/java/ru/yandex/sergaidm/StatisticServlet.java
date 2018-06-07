@@ -27,9 +27,9 @@ public class StatisticServlet extends HttpServlet {
 	private int answerTwelve=0;
 	private int answerThirteen=0;
 	private static final String TEMPLATE = "<!DOCTYPE html><html>"
-			+ "<head><meta charset=\"UTF-8\"><title>Анкета</title></head>"
+			+ "<head><meta charset=\"UTF-8\"><title>Questionnaire</title></head>"
 			+ "<body><form method=\"get\" action=\"/ProgramPRO31\"><p>%s</p>"
-			+ "<input type=\"submit\" value=\"Повторить прохождение\"></form></body></html>";
+			+ "<input type=\"submit\" value=\"Repeat the questionnaire\"></form></body></html>";
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -78,24 +78,24 @@ public class StatisticServlet extends HttpServlet {
 	}
 	
 	private String result() {
-		return "<ol><li><p><strong>Наиболее популярные жанры игр:</strong></p>"
-				+ "<ul type=\"disc\"><li><p>Симуляторы - " + answerOne + "</p></li>" 
-				+ "<li><p>Стратегии - " + answerTwo + "</p></li>" 
-				+ "<li><p>Экшены - " + answerThree + "</p></li>"
+		return "<ol><li><p><strong>The most popular genres of computer games:</strong></p>"
+				+ "<ul type=\"disc\"><li><p>Simulators - " + answerOne + "</p></li>" 
+				+ "<li><p>RTS - " + answerTwo + "</p></li>" 
+				+ "<li><p>Actions - " + answerThree + "</p></li>"
 				+ "<li><p>RPG - " + answerFour + "</p></li>"
 				+ "</ul></li>"
-				+ "<li><p><strong>Наиболее популярные жанры литературы:</strong></p>"
-				+ "<ul type=\"disc\"><li><p>Историческая - " + answerFive + "</p></li>" 
-				+ "<li><p>Классическая - " + answerSix + "</p></li>" 
-				+ "<li><p>Фантастика - " + answerSeven + "</p></li>"
-				+ "<li><p>Фэнтези - " + answerEight + "</p></li>"
+				+ "<li><p><strong>The most popular genres of literature:</strong></p>"
+				+ "<ul type=\"disc\"><li><p>Historical - " + answerFive + "</p></li>" 
+				+ "<li><p>Classic - " + answerSix + "</p></li>" 
+				+ "<li><p>Fantastic - " + answerSeven + "</p></li>"
+				+ "<li><p>Fantasy - " + answerEight + "</p></li>"
 				+ "</ul></li>"
-				+"<li><p><strong>Наиболее популярные российские металл-группы:</strong></p>"
-				+ "<ul type=\"disc\"><li><p>Ария - " + answerNine + "</p></li>"
-				+ "<li><p>Аркона - " + answerTen + "</p></li>"
-				+ "<li><p>Кипелов - " + answerEleven + "</p></li>"
-				+ "<li><p>Мастер - " + answerTwelve + "</p></li>"
-				+ "<li><p>Эпидемия - " + answerThirteen + "</p></li>"
+				+"<li><p><strong>The most popular Russian metal-bands:</strong></p>"
+				+ "<ul type=\"disc\"><li><p>Aria - " + answerNine + "</p></li>"
+				+ "<li><p>Arkona - " + answerTen + "</p></li>"
+				+ "<li><p>Kipelov - " + answerEleven + "</p></li>"
+				+ "<li><p>Master - " + answerTwelve + "</p></li>"
+				+ "<li><p>Epidemiya - " + answerThirteen + "</p></li>"
 				+ "</ul></li>"
 				+ "</ol>";
 	}
