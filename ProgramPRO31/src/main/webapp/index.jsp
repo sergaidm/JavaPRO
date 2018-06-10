@@ -10,11 +10,11 @@
 			<table>
 				<tr>
 					<td><strong>Your name</strong></td>
-					<td><input maxlength="25" size="40" name="name" value="Name"></td>
+					<td><input maxlength="25" size="40" name="name" placeholder="Name"></td>
 				</tr>	
 				<tr>
 					<td><strong>Your surname</strong></td>
-					<td><input maxlength="25" size="40" name="surname" value="Surname"></td>
+					<td><input maxlength="25" size="40" name="surname" placeholder="Surname"></td>
 					
 				</tr>				
 			</table>
