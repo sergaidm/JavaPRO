@@ -1,15 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>ru.yandex.sergaidm</groupId>
-  <artifactId>ProgramPRO32</artifactId>
+  <artifactId>ProgramPRO31</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>web Maven Webapp</name>
+  <name>ProgramPRO31 Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
   <dependencies>
   <dependency>
           <groupId>javax.servlet</groupId>
@@ -24,7 +27,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
+  
+  <build>  
     <plugins>
       <plugin>
         <groupId>com.heroku.sdk</groupId>
@@ -34,7 +38,7 @@
           <appName>sergaidm-questionnaire</appName>
         </configuration>
       </plugin>
-    </plugins>
-    <finalName>ProgramPRO31</finalName>
-  </build>
+    </plugins>    
+    <finalName>ProgramPRO31</finalName>    
+  </build>  
 </project>
