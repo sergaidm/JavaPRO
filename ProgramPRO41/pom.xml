@@ -5,12 +5,12 @@
   <groupId>ru.yandex.sergaidm</groupId>
   <artifactId>ProgramPRO41</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <name>ProgramPRO41 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
   <dependencies>
-  <dependency>
+  	<dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>servlet-api</artifactId>
           <version>2.5</version>
@@ -25,7 +25,7 @@
   </dependencies>
   
   <build>
-  <plugins>
+  	<plugins>
       <plugin>
         <groupId>com.heroku.sdk</groupId>
         <artifactId>heroku-maven-plugin</artifactId>
@@ -35,6 +35,5 @@
         </configuration>
       </plugin>
     </plugins>
-    <finalName>ProgramPRO41</finalName>
   </build>
 </project>
