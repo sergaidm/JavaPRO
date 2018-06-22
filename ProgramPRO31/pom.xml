@@ -38,6 +38,7 @@
           <appName>sergaidm-questionnaire</appName>
         </configuration>
       </plugin>
-    </plugins>    
+    </plugins>
+    <finalName>ProgramPRO31</finalName>     
   </build>  
 </project>
