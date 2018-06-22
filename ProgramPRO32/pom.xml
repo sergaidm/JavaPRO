@@ -35,5 +35,6 @@
         </configuration>
       </plugin>
     </plugins>
+    <finalName>ProgramPRO32</finalName>    
   </build>
 </project>
