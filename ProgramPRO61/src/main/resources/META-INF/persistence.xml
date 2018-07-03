@@ -1,0 +1,32 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="Hibernate">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
+<!--         Properties for connect to local database -->
+
+<!--         <properties> -->
+<!--             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> -->
+<!--             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/FlatsDatabase"/> -->
+<!--             <property name="javax.persistence.jdbc.user" value="postgres" /> -->
+<!--             <property name="javax.persistence.jdbc.password" value="**********" /> -->
+<!--             <property name="hibernate.show_sql" value="true" /> -->
+<!--             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> -->
+<!--             <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+<!--         </properties> -->
+
+<!--         Properties for connect to remote database -->
+        
+          <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-247-79-32.eu-west-1.compute.amazonaws.com/d7oviungu5c7uc"/>
+            <property name="javax.persistence.jdbc.user" value="hxszyinnjredzn" />
+            <property name="javax.persistence.jdbc.password" value="01e9a04be007f3f5b74e85c282cbd04c5f1a4fc78e33272b6349dbeb53a1ce23" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
