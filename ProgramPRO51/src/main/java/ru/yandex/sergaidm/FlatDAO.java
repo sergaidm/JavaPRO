@@ -4,8 +4,6 @@ import java.util.List;
 
 public interface FlatDAO {
 	
-	public void createTable();
-	
 	public void insert(Flat flat);
 	
 	public List<Flat> getFlatsList();

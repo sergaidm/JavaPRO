@@ -23,16 +23,19 @@ public class FlatDAODatabaseImplementation implements FlatDAO {
 
 	/*
 	 * Method for a local database:
-	 * 
-	 * public Connection connectToDatabase() throws SQLException { try {
-	 * Class.forName("org.postgresql.Driver"); } catch (ClassNotFoundException e) {
-	 * e.printStackTrace(); } return
-	 * DriverManager.getConnection(properties.getUrl(), properties.getUser(),
-	 * properties.getPassword()); }
 	 */
 
+	/*public Connection connectToDatabase() throws SQLException {
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return DriverManager.getConnection(properties.getUrl(), properties.getUser(), properties.getPassword());
+	}*/
+
 	/*
-	 * Method for Heroku database:
+	 * Method for remote database:
 	 */
 
 	public Connection connectToDatabase() throws URISyntaxException, SQLException {
@@ -41,46 +44,20 @@ public class FlatDAODatabaseImplementation implements FlatDAO {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		URI databaseURI = new URI(System.getenv(
-				"postgres://cjrefezsvsitiw:6afb556db9e4283f79f71343cd03a2cf76fce586f0c56fb4cdb27990c073c9a4@ec2-54-217-250-0.eu-west-1.compute.amazonaws.com:5432/deukamiotu7ksk"));
+		URI databaseURI = new URI("postgres://cjrefezsvsitiw:6afb556db9e4283f79f71343cd03a2cf76fce586f0c56fb4cdb27990c073c9a4@ec2-54-217-250-0.eu-west-1.compute.amazonaws.com:5432/deukamiotu7ksk");
 		String user = databaseURI.getUserInfo().split(":")[0];
 		String password = databaseURI.getUserInfo().split(":")[1];
 		String databasebURL = "jdbc:postgresql://" + databaseURI.getHost() + ':' + databaseURI.getPort()
 				+ databaseURI.getPath() + "?sslmode=require";
 		return DriverManager.getConnection(databasebURL, user, password);
 	}
-
-	@Override
+	
 	public void createTable() {
 		try (Connection connection = connectToDatabase()) {
 			try (Statement statement = connection.createStatement()) {
-				statement.addBatch("DROP TABLE IF EXISTS flats");
-				statement.addBatch("DROP TYPE IF EXISTS price");
 				statement.addBatch("CREATE TYPE PRICE AS (cost NUMERIC, currency CHAR(1));");
-				statement.addBatch(
-						"CREATE TABLE flats (id SERIAL, address VARCHAR(30) NOT NULL, number_of_rooms INTEGER NOT NULL, "
+				statement.addBatch("CREATE TABLE flats (id SERIAL, address VARCHAR(30) NOT NULL, number_of_rooms INTEGER NOT NULL, "
 								+ "floor INTEGER NOT NULL, price PRICE NOT NULL, PRIMARY KEY (id));");
-				statement.executeBatch();
-			}
-		} catch (SQLException | URISyntaxException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void initializationDatabase() {
-		createTable();
-		try (Connection connection = connectToDatabase()) {
-			try (Statement statement = connection.createStatement()) {
-				statement.addBatch("INSERT INTO flats VALUES (1, 'USA, Fort Lauderdale', 2, 3, '(10000,$)')");
-				statement.addBatch("INSERT INTO flats VALUES (2, 'USA, Miami', 4, 5, '(20000,$)')");
-				statement.addBatch("INSERT INTO flats VALUES (3, 'USA, Los Angeles', 8, 28, '(30000,$)')");
-				statement.addBatch("INSERT INTO flats VALUES (4, 'USA, Miami', 13, 1, '(40000,$)')");
-				statement.addBatch("INSERT INTO flats VALUES (5, 'Germany, Berlin', 3, 4, '(10000,€)')");
-				statement.addBatch("INSERT INTO flats VALUES (6, 'UK, London', 9, 2, '(20000,€)')");
-				statement.addBatch("INSERT INTO flats VALUES (7, 'France, Paris', 4, 6, '(30000,€)')");
-				statement.addBatch("INSERT INTO flats VALUES (8, 'Ukraine, Kiev', 1, 8, '(10000,₴)')");
-				statement.addBatch("INSERT INTO flats VALUES (9, 'Ukraine, Kiev', 2, 9, '(20000,₴)')");
-				statement.addBatch("INSERT INTO flats VALUES (10, 'Ukraine, Kiev', 3, 10, '(30000,₴)')");
 				statement.executeBatch();
 			}
 		} catch (SQLException | URISyntaxException e) {
