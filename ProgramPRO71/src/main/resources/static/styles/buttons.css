@@ -1,0 +1,46 @@
+button.glo {
+	color: #00c6ff;
+	padding: 15px 20px;
+	text-transform: uppercase;
+	width: 350px;
+	text-decoration: none;
+	text-align: center;
+	margin: 30px 0;
+	display: none;
+	background-image: linear-gradient(to left, transparent, transparent 50%, #00c6ff 50%, #00c6ff);
+	background-position: 100% 0;
+	background-size: 200% 100%;
+	transition: all .25s ease-in;
+	font: 400 20px tahoma;
+	border: 1px solid #00C6FF;
+}
+
+button.glo:hover {
+	background-position: 0 0;
+	color: #fff;
+}
+
+button.delete_button {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: -1px -1px #000;
+  user-select: none;
+  padding: .8em 2em;
+  outline: none;
+  background-color: #000;
+  background-image: linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto;
+  background-position: 200% 0, 0 0;
+  box-shadow: rgba(0,0,0,.3) 0 2px 5px;
+} 
+button.delete_button:active {
+  top: 1px;
+  box-shadow: none;
+}
+button.delete_button:hover {
+  transition: .5s linear;
+  background-position: -200% 0, 0 0;
+}
