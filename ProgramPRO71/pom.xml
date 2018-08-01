@@ -85,6 +85,14 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>	
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>2.0.5</version>
+				<configuration>
+					<appName>sergaidm-photohosting</appName>
+				</configuration>
+			</plugin>
 		</plugins>
 		
 		<finalName>ProgramPRO71</finalName>
